@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrganizeMyPhotos));
             this.gb_Input = new System.Windows.Forms.GroupBox();
+            this.btn_Search_light = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_lightroom = new System.Windows.Forms.TextBox();
+            this.btn_Search_orig = new System.Windows.Forms.Button();
             this.lb_Source = new System.Windows.Forms.Label();
             this.tb_Source = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gb_destination = new System.Windows.Forms.GroupBox();
+            this.btn_Search_desc = new System.Windows.Forms.Button();
             this.lb_destination = new System.Windows.Forms.Label();
             this.tb_destination = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.gb_indstillinger = new System.Windows.Forms.GroupBox();
+            this.cb_override = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_PriZeroCount_File = new System.Windows.Forms.TextBox();
             this.cb_AddImageId = new System.Windows.Forms.CheckBox();
@@ -47,10 +52,6 @@
             this.tb_PriZeroCountFolder = new System.Windows.Forms.TextBox();
             this.cb_AddFolderId = new System.Windows.Forms.CheckBox();
             this.cb_Move = new System.Windows.Forms.CheckBox();
-            this.btn_Search_desc = new System.Windows.Forms.Button();
-            this.btn_Search_light = new System.Windows.Forms.Button();
-            this.btn_Search_orig = new System.Windows.Forms.Button();
-            this.cb_override = new System.Windows.Forms.CheckBox();
             this.gb_Input.SuspendLayout();
             this.gb_destination.SuspendLayout();
             this.gb_indstillinger.SuspendLayout();
@@ -76,6 +77,18 @@
             this.gb_Input.TabStop = false;
             this.gb_Input.Text = "Kilde";
             // 
+            // btn_Search_light
+            // 
+            this.btn_Search_light.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search_light.Image = global::FotoHelper_Pro.Properties.Resources.icons8_search_folder_23;
+            this.btn_Search_light.Location = new System.Drawing.Point(648, 58);
+            this.btn_Search_light.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Search_light.Name = "btn_Search_light";
+            this.btn_Search_light.Size = new System.Drawing.Size(34, 30);
+            this.btn_Search_light.TabIndex = 11;
+            this.btn_Search_light.UseVisualStyleBackColor = true;
+            this.btn_Search_light.Click += new System.EventHandler(this.btn_Search_light_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -94,6 +107,18 @@
             this.tb_lightroom.Name = "tb_lightroom";
             this.tb_lightroom.Size = new System.Drawing.Size(469, 22);
             this.tb_lightroom.TabIndex = 9;
+            // 
+            // btn_Search_orig
+            // 
+            this.btn_Search_orig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search_orig.Image = global::FotoHelper_Pro.Properties.Resources.icons8_search_folder_23;
+            this.btn_Search_orig.Location = new System.Drawing.Point(648, 23);
+            this.btn_Search_orig.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Search_orig.Name = "btn_Search_orig";
+            this.btn_Search_orig.Size = new System.Drawing.Size(34, 30);
+            this.btn_Search_orig.TabIndex = 8;
+            this.btn_Search_orig.UseVisualStyleBackColor = true;
+            this.btn_Search_orig.Click += new System.EventHandler(this.btn_Search_orig_Click);
             // 
             // lb_Source
             // 
@@ -127,6 +152,18 @@
             this.gb_destination.TabIndex = 1;
             this.gb_destination.TabStop = false;
             this.gb_destination.Text = "Destination";
+            // 
+            // btn_Search_desc
+            // 
+            this.btn_Search_desc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search_desc.Image = global::FotoHelper_Pro.Properties.Resources.icons8_search_folder_23;
+            this.btn_Search_desc.Location = new System.Drawing.Point(648, 25);
+            this.btn_Search_desc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Search_desc.Name = "btn_Search_desc";
+            this.btn_Search_desc.Size = new System.Drawing.Size(34, 30);
+            this.btn_Search_desc.TabIndex = 11;
+            this.btn_Search_desc.UseVisualStyleBackColor = true;
+            this.btn_Search_desc.Click += new System.EventHandler(this.btn_Search_desc_Click);
             // 
             // lb_destination
             // 
@@ -185,6 +222,16 @@
             this.gb_indstillinger.TabIndex = 4;
             this.gb_indstillinger.TabStop = false;
             this.gb_indstillinger.Text = "Indstillinger";
+            // 
+            // cb_override
+            // 
+            this.cb_override.AutoSize = true;
+            this.cb_override.Location = new System.Drawing.Point(6, 86);
+            this.cb_override.Name = "cb_override";
+            this.cb_override.Size = new System.Drawing.Size(115, 20);
+            this.cb_override.TabIndex = 7;
+            this.cb_override.Text = "Overskrive filer";
+            this.cb_override.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -260,52 +307,6 @@
             this.cb_Move.Text = "Flyt i stedet for at kopi";
             this.cb_Move.UseVisualStyleBackColor = true;
             // 
-            // btn_Search_desc
-            // 
-            this.btn_Search_desc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Search_desc.Image = global::FotoHelper_Pro.Properties.Resources.icons8_search_folder_23;
-            this.btn_Search_desc.Location = new System.Drawing.Point(648, 25);
-            this.btn_Search_desc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Search_desc.Name = "btn_Search_desc";
-            this.btn_Search_desc.Size = new System.Drawing.Size(34, 30);
-            this.btn_Search_desc.TabIndex = 11;
-            this.btn_Search_desc.UseVisualStyleBackColor = true;
-            this.btn_Search_desc.Click += new System.EventHandler(this.btn_Search_desc_Click);
-            // 
-            // btn_Search_light
-            // 
-            this.btn_Search_light.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Search_light.Image = global::FotoHelper_Pro.Properties.Resources.icons8_search_folder_23;
-            this.btn_Search_light.Location = new System.Drawing.Point(648, 58);
-            this.btn_Search_light.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Search_light.Name = "btn_Search_light";
-            this.btn_Search_light.Size = new System.Drawing.Size(34, 30);
-            this.btn_Search_light.TabIndex = 11;
-            this.btn_Search_light.UseVisualStyleBackColor = true;
-            this.btn_Search_light.Click += new System.EventHandler(this.btn_Search_light_Click);
-            // 
-            // btn_Search_orig
-            // 
-            this.btn_Search_orig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Search_orig.Image = global::FotoHelper_Pro.Properties.Resources.icons8_search_folder_23;
-            this.btn_Search_orig.Location = new System.Drawing.Point(648, 23);
-            this.btn_Search_orig.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Search_orig.Name = "btn_Search_orig";
-            this.btn_Search_orig.Size = new System.Drawing.Size(34, 30);
-            this.btn_Search_orig.TabIndex = 8;
-            this.btn_Search_orig.UseVisualStyleBackColor = true;
-            this.btn_Search_orig.Click += new System.EventHandler(this.btn_Search_orig_Click);
-            // 
-            // cb_override
-            // 
-            this.cb_override.AutoSize = true;
-            this.cb_override.Location = new System.Drawing.Point(6, 86);
-            this.cb_override.Name = "cb_override";
-            this.cb_override.Size = new System.Drawing.Size(115, 20);
-            this.cb_override.TabIndex = 7;
-            this.cb_override.Text = "Overskrive filer";
-            this.cb_override.UseVisualStyleBackColor = true;
-            // 
             // OrganizeMyPhotos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,11 +320,11 @@
             this.Controls.Add(this.gb_Input);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OrganizeMyPhotos";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Organize My Photos";
             this.gb_Input.ResumeLayout(false);

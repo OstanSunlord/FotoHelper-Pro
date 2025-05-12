@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.p_top = new System.Windows.Forms.Panel();
+            this.pb_logo = new System.Windows.Forms.PictureBox();
             this.p_bund = new System.Windows.Forms.Panel();
             this.btn_close = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_OrganizeMyPhotos = new System.Windows.Forms.Button();
-            this.pb_logo = new System.Windows.Forms.PictureBox();
             this.p_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.p_bund.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // p_top
@@ -48,6 +49,16 @@
             this.p_top.Name = "p_top";
             this.p_top.Size = new System.Drawing.Size(390, 117);
             this.p_top.TabIndex = 3;
+            // 
+            // pb_logo
+            // 
+            this.pb_logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_logo.Image = global::FotoHelper_Pro.Properties.Resources.solrod_logo_white;
+            this.pb_logo.Location = new System.Drawing.Point(0, 0);
+            this.pb_logo.Name = "pb_logo";
+            this.pb_logo.Size = new System.Drawing.Size(390, 117);
+            this.pb_logo.TabIndex = 1;
+            this.pb_logo.TabStop = false;
             // 
             // p_bund
             // 
@@ -89,16 +100,6 @@
             this.btn_OrganizeMyPhotos.UseVisualStyleBackColor = true;
             this.btn_OrganizeMyPhotos.Click += new System.EventHandler(this.btn_OrganizeMyPhotos_Click);
             // 
-            // pb_logo
-            // 
-            this.pb_logo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb_logo.Image = global::FotoHelper_Pro.Properties.Resources.solrod_logo_white;
-            this.pb_logo.Location = new System.Drawing.Point(0, 0);
-            this.pb_logo.Name = "pb_logo";
-            this.pb_logo.Size = new System.Drawing.Size(390, 117);
-            this.pb_logo.TabIndex = 1;
-            this.pb_logo.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,14 +109,14 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.p_bund);
             this.Controls.Add(this.p_top);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FotoHelper Pro";
             this.p_top.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
             this.p_bund.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
