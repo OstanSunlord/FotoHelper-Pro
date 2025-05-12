@@ -17,6 +17,12 @@ namespace FotoHelper_Pro
             InitializeComponent();
         }
 
+        private void btn_OrganizeMyPhotos_Click(object sender, EventArgs e)
+        {
+            var dialog = new OrganizeMyPhotos();
+            dialog.ShowDialog();
+        }
+
         private void btn_close_Click(object sender, EventArgs e)
         {
             Close();

@@ -63,6 +63,16 @@ namespace FotoHelper_Pro.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_folder_23 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_search_folder_23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap solrod_logo_white {
             get {
                 object obj = ResourceManager.GetObject("solrod_logo_white", resourceCulture);
