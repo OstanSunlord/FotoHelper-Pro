@@ -17,39 +17,92 @@ namespace FotoHelper_Pro
         public OrganizeMyPhotos()
         {
             InitializeComponent();
+
+            // Indstil standardværdier for tekstbokse
+            LoadSettings();
+        }
+
+        private void LoadSettings()
+        {
+            try
+            {
+                var settings = OrganizeMyPhotosSettings.Load();
+
+                tb_Source.Text = Directory.Exists(settings.SourcePath) ? settings.SourcePath : string.Empty;
+                tb_lightroom.Text = Directory.Exists(settings.LightroomPath) ? settings.LightroomPath : string.Empty;
+                tb_destination.Text = Directory.Exists(settings.DestinationPath) ? settings.DestinationPath : string.Empty;
+                cb_AddImageId.Checked = settings.AddImageId;
+                cb_AddFolderId.Checked = settings.AddFolderId;
+                cb_Move.Checked = settings.MoveFiles;
+                cb_override.Checked = settings.OverrideFiles;
+                tb_PriZeroCount_File.Text = settings.FileZeroPadding.ToString();
+                tb_PriZeroCountFolder.Text = settings.FolderZeroPadding.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fejl under indlæsning af brugerindstillinger: {ex.Message}", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_Search_orig_Click(object sender, EventArgs e)
         {
-            tb_Source.Text = GetSelectedFolderPath("Vælg mappen, der indeholder dine originale fotos.");
+            tb_Source.Text = GetSelectedFolderPath("Vælg mappen, der indeholder dine originale fotos.", tb_Source.Text);
         }
 
         private void btn_Search_light_Click(object sender, EventArgs e)
         {
-            tb_lightroom.Text = GetSelectedFolderPath("Vælg mappen, der indeholder din Lightroom-katalog.");
+            tb_lightroom.Text = GetSelectedFolderPath("Vælg mappen, der indeholder din Lightroom-katalog.", tb_lightroom.Text);
         }
 
         private void btn_Search_desc_Click(object sender, EventArgs e)
         {
-            tb_destination.Text = GetSelectedFolderPath("Vælg destinationsmappen til organiserede fotos.");
+            tb_destination.Text = GetSelectedFolderPath("Vælg destinationsmappen til organiserede fotos.", tb_destination.Text);
         }
 
-        private string GetSelectedFolderPath(string description)
+        private string GetSelectedFolderPath(string description, string defaultPath = "")
         {
             using (var folderBrowserDialog = new FolderBrowserDialog())
             {
                 folderBrowserDialog.Description = description;
+                if (!string.IsNullOrWhiteSpace(defaultPath) && Directory.Exists(defaultPath))
+                {
+                    folderBrowserDialog.SelectedPath = defaultPath;
+                }
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
                     return folderBrowserDialog.SelectedPath;
                 }
             }
-            return string.Empty;
+            return defaultPath;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            SaveOrganizeMyPhotosSettings();
             Close();
+        }
+
+        private void SaveOrganizeMyPhotosSettings()
+        {
+            try
+            {
+                var settings = new OrganizeMyPhotosSettings
+                {
+                    SourcePath = tb_Source.Text,
+                    LightroomPath = tb_lightroom.Text,
+                    DestinationPath = tb_destination.Text,
+                    AddImageId = cb_AddImageId.Checked,
+                    AddFolderId = cb_AddFolderId.Checked,
+                    FileZeroPadding = int.TryParse(tb_PriZeroCount_File.Text, out int filePadding) ? filePadding : 0,
+                    FolderZeroPadding = int.TryParse(tb_PriZeroCountFolder.Text, out int folderPadding) ? folderPadding : 0
+                };
+
+                settings.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fejl under gemning af brugerindstillinger: {ex.Message}", "Fejl", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
