@@ -17,6 +17,10 @@ namespace FotoHelper_Pro
             InitializeComponent();
             MinimumSize = new Size(this.Width, this.Height);
             MaximumSize = new Size(this.Width, this.Height*2);
+
+            btn_OrganizeMyPhotos.Text = new OrganizeMyPhotosCommand().Name;
+            btn_TagFilesAndFolder.Text = new TagFilesandFolderCommand().Name;
+
         }
 
         private void btn_OrganizeMyPhotos_Click(object sender, EventArgs e)

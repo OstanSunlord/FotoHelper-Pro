@@ -86,7 +86,6 @@
             this.flow_menu.Controls.Add(this.btn_OrganizeMyPhotos);
             this.flow_menu.Controls.Add(this.btn_TagFilesAndFolder);
             this.flow_menu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_menu.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flow_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flow_menu.Location = new System.Drawing.Point(0, 117);
             this.flow_menu.Name = "flow_menu";
@@ -98,9 +97,9 @@
             this.btn_OrganizeMyPhotos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_OrganizeMyPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OrganizeMyPhotos.Location = new System.Drawing.Point(4, 3);
+            this.btn_OrganizeMyPhotos.Location = new System.Drawing.Point(3, 3);
             this.btn_OrganizeMyPhotos.Name = "btn_OrganizeMyPhotos";
-            this.btn_OrganizeMyPhotos.Size = new System.Drawing.Size(387, 46);
+            this.btn_OrganizeMyPhotos.Size = new System.Drawing.Size(394, 50);
             this.btn_OrganizeMyPhotos.TabIndex = 0;
             this.btn_OrganizeMyPhotos.Text = "Organize My Photos";
             this.btn_OrganizeMyPhotos.UseVisualStyleBackColor = true;
@@ -111,9 +110,9 @@
             this.btn_TagFilesAndFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_TagFilesAndFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TagFilesAndFolder.Location = new System.Drawing.Point(4, 55);
+            this.btn_TagFilesAndFolder.Location = new System.Drawing.Point(3, 59);
             this.btn_TagFilesAndFolder.Name = "btn_TagFilesAndFolder";
-            this.btn_TagFilesAndFolder.Size = new System.Drawing.Size(387, 46);
+            this.btn_TagFilesAndFolder.Size = new System.Drawing.Size(394, 50);
             this.btn_TagFilesAndFolder.TabIndex = 1;
             this.btn_TagFilesAndFolder.Text = "Tag Files and Folder";
             this.btn_TagFilesAndFolder.UseVisualStyleBackColor = true;

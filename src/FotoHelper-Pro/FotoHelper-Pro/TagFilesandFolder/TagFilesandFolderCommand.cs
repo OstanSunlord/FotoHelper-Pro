@@ -15,7 +15,7 @@ namespace FotoHelper_Pro
         public TagFilesandFolderCommand()
             : base()
         {
-            _name = "Tag Files and Folder";
+            _name = "Organiser med Indeksering";
         }
 
         public override void Execute()
@@ -33,7 +33,7 @@ namespace FotoHelper_Pro
                 if (sender is TagFilesandFolder dialog)
                 {
                     dialog.DataValidate();
-                    var thead = new ProgressDialog("Tag Files and Folder...", worker =>
+                    var thead = new ProgressDialog("Organiser med Indeksering...", worker =>
                     {
                         List<DirectoryEntry> values = new List<DirectoryEntry>();
                         var sourceList = FileHelper.GetAllFilesAndFolders(e.SourcePath, false);

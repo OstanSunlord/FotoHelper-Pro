@@ -15,7 +15,7 @@ namespace FotoHelper_Pro
     {
         public OrganizeMyPhotosCommand() : base()
         {
-            _name = "Organiser mine fotos";
+            _name = "Fotoorganisator";
         }
 
         public override void Execute()
@@ -33,7 +33,7 @@ namespace FotoHelper_Pro
 
                 var missingFiles = new List<string>();
 
-                var thead = new ProgressDialog("Organiserer fotos...", worker =>
+                var thead = new ProgressDialog("Fotoorganisator...", worker =>
                 {
                     List<DirectoryEntry> values = new List<DirectoryEntry>();
                     var sourceList = FileHelper.GetAllFilesAndFolders(e.SourcePath, false);
