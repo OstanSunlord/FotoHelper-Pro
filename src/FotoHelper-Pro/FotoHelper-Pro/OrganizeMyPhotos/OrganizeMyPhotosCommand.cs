@@ -166,62 +166,7 @@ namespace FotoHelper_Pro
                             MessageBox.Show("Filer og mapper er blevet tagget.", "Færdig", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     };
-                });
-                /*
-                // Opret og vis fremdriftsdialogen  
-                ProgressDialog progressDialog = new ProgressDialog()
-                {
-                    StartPosition = FormStartPosition.CenterScreen,
-                    FormBorderStyle = FormBorderStyle.FixedDialog,
-                    MaximizeBox = false,
-                    MinimizeBox = false,
-                    ShowInTaskbar = false,
-                    ControlBox = false
-                };
-
-                progressDialog.Text = "Organiserer fotos...";
-
-                progressDialog.ProgressBar.Minimum = 0;
-                progressDialog.ProgressBar.Maximum = 100;
-                progressDialog.ProgressBar.Value = 0;
-                progressDialog.StatusLabel.Text = "Starter...";
-
-                // Opsæt BackgroundWorker  
-                BackgroundWorker worker = new BackgroundWorker();
-                worker.WorkerReportsProgress = true;
-
-                
-
-                worker.DoWork += (s, args) =>
-                {
-                   
-                };
-
-                worker.ProgressChanged += (s, args) =>
-                {
-                    // Opdater fremdriftslinje og statusetiket  
-                    progressDialog.ProgressBar.Value = args.ProgressPercentage;
-                    progressDialog.StatusLabel.Text = args.UserState.ToString();
-                };
-
-                worker.RunWorkerCompleted += (s, args) =>
-                {
-                    // Luk dialogen, når færdig  
-                    progressDialog.Close();
-
-                    if (missingFiles.Any())
-                    {
-                        string message = "Følgende filer blev ikke fundet:\n\n" + string.Join("\n", missingFiles);
-                        MessageBox.Show(message, "Manglende filer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-
-                    MessageBox.Show("Behandling afsluttet med succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                };
-
-                // Vis dialogen og start arbejderen  
-                progressDialog.Show(dialog);
-                worker.RunWorkerAsync();
-                */
+                });                
             }
         }
     }
