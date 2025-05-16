@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace FotoHelper_Pro
+namespace FotoHelper_Pro.library
 {
     public static class FileHelper
     {
@@ -58,5 +59,23 @@ namespace FotoHelper_Pro
         {
             return fullPath.Substring(basePath.Length).TrimStart(Path.DirectorySeparatorChar);
         }
+
+        public static string GetSelectedFolderPath(string description, string defaultPath = "")
+        {
+            using (var folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.Description = description;
+                if (!string.IsNullOrWhiteSpace(defaultPath) && Directory.Exists(defaultPath))
+                {
+                    folderBrowserDialog.SelectedPath = defaultPath;
+                }
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    return folderBrowserDialog.SelectedPath;
+                }
+            }
+            return defaultPath;
+        }
+
     }
 }

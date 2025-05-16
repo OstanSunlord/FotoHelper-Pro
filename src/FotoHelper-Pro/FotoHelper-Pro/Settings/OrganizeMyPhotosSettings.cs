@@ -2,7 +2,7 @@
 using System.IO;
 using System.Xml.Serialization;
 
-namespace FotoHelper_Pro
+namespace FotoHelper_Pro.Settings
 {
     public class OrganizeMyPhotosSettings
     {

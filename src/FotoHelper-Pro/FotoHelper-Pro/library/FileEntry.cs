@@ -1,4 +1,4 @@
-﻿namespace FotoHelper_Pro
+﻿namespace FotoHelper_Pro.library
 {
     public class FileEntry
     {
